@@ -13,6 +13,9 @@ public class Book {
 
     private String title;
     private String isbn;
+    @ManyToOne
+    private Publishers publishers;
+
 
     @SuppressWarnings("JpaDataSourceORMInspection")
     @ManyToMany
@@ -26,6 +29,14 @@ public class Book {
     public Book(String title, String isbn) {
         this.title = title;
         this.isbn = isbn;
+    }
+
+    public Publishers getPublishers() {
+        return publishers;
+    }
+
+    public void setPublishers(Publishers publishers) {
+        this.publishers = publishers;
     }
 
     public Long getId() {
