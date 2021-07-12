@@ -18,6 +18,8 @@ public class Spring5webappApplication {
 
 		String greeting = myController.sayHello();
 
+		System.out.println("-------- Primary");
+
 		System.out.println(greeting);
 
 		System.out.println("--------  Property");
