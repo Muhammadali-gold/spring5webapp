@@ -3,9 +3,9 @@ package guru.springframework.spring5webapp.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImp implements GreetingService{
+public class PropertyInjectedGreetingService implements GreetingService{
     @Override
     public String sayGreeting() {
-        return "Hello Folks";
+        return "Hello World - Property";
     }
 }
