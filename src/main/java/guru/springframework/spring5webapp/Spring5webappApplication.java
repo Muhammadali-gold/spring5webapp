@@ -1,9 +1,8 @@
 package guru.springframework.spring5webapp;
 
-import guru.springframework.spring5webapp.controllers.ConstructorInjectedController;
-import guru.springframework.spring5webapp.controllers.MyController;
-import guru.springframework.spring5webapp.controllers.PropertyInjectedController;
-import guru.springframework.spring5webapp.controllers.SetterInjectedController;
+import guru.springframework.spring5webapp.controllers.*;
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +12,13 @@ public class Spring5webappApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Spring5webappApplication.class, args);
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+
+		System.out.println("-------- Profile");
+
+		System.out.println(i18nController.sayhello());
+
 
 		MyController myController = (MyController) ctx.getBean("myController");
 
@@ -39,6 +45,9 @@ public class Spring5webappApplication {
 		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) ctx.getBean("constructorInjectedController");
 
 		System.out.println(constructorInjectedController.getGreeting());
+
+
+
 	}
 
 }
